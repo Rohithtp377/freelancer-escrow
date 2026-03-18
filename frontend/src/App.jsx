@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
-import { createClient } from "genlayer-js";
+import { createClient, createAccount } from "genlayer-js";
+import { testnet } from "genlayer-js/chains";
 
-const CONTRACT_ADDRESS = "0xBE69cF887fB77078544D708280D5bbAf60BCdFc8";
+const CONTRACT_ADDRESS = "0xD708280D5bbAf60BCdFc8";
 
+const account = createAccount();
 const client = createClient({
+  chain: testnet,
+  account: account,
+});
   chainId: 961,
   rpcUrl: "https://studio.genlayer.com/api"
 });
