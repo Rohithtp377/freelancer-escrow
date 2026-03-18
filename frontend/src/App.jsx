@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { createClient } from "genlayer-js";
 
-const CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS_HERE";
+const CONTRACT_ADDRESS = "0xBE69cF887fB77078544D708280D5bbAf60BCdFc8";
 
-const client = createClient();
+const client = createClient({
+  chainId: 961,
+  rpcUrl: "https://studio.genlayer.com/api"
+});
 
 function StatusBadge({ status }) {
   const colors = {
